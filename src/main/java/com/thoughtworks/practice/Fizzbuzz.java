@@ -13,6 +13,10 @@ public class Fizzbuzz {
             result += "buzz";
         }
 
+        if (result.isEmpty()){
+            return "not fizzy or buzzy";
+        }
+        
         return result;
     }
 }

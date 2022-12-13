@@ -2,6 +2,8 @@ package com.thoughtworks.practice;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,10 +15,11 @@ class FizzbuzzTest {
         fizzbuzz = new Fizzbuzz();
     }
 
-    @Test
-    void shouldReturnFizzForNumberDivisibleBy3() {
+    @ParameterizedTest
+    @ValueSource(strings = {"3", "9"})
+    void shouldReturnFizzForNumberDivisibleBy3(String input) {
         String expected = "fizz";
-        String actual = fizzbuzz.getFizzOrBuzz("3");
+        String actual = fizzbuzz.getFizzOrBuzz(input);
 
         assertEquals(expected, actual);
     }

@@ -49,4 +49,12 @@ class FizzbuzzTest {
 
         assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"Hello", "World"})
+    void shouldReturnInputIfNotANumber(String input) {
+        String actual = fizzbuzz.getFizzOrBuzz(input);
+
+        assertEquals(input, actual);
+    }
 }

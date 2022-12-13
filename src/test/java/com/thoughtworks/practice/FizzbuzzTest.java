@@ -31,4 +31,13 @@ class FizzbuzzTest {
 
         assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"15", "30"})
+    void shouldReturnFizzBuzzForNumberDivisibleBy3And5(String input) {
+        String expected = "fizzbuzz";
+        String actual = fizzbuzz.getFizzOrBuzz(input);
+
+        assertEquals(expected, actual);
+    }
 }

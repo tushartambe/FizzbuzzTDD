@@ -40,4 +40,13 @@ class FizzbuzzTest {
 
         assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"7", "13", "11"})
+    void shouldReturnNotFizzyOrBuzzyForNumberNotDivisibleBy3Or5(String input) {
+        String expected = "not fizzy or buzzy";
+        String actual = fizzbuzz.getFizzOrBuzz(input);
+
+        assertEquals(expected, actual);
+    }
 }
